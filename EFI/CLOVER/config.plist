@@ -355,7 +355,7 @@
 				<key>PStates</key>
 				<false/>
 				<key>PluginType</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>NoDynamicExtract</key>
 			<false/>
@@ -366,7 +366,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>keepsyms=1 darkwake=0 kext-dev-mode=1 debug=0x100 -wegnoegpu igfxcflbklt=1 -cdfon -v</string>
+		<string>keepsyms=1 kext-dev-mode=1 debug=0x100 igfxcflbklt=1 -cdfon -v darkwake=0</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>DisableCloverHotkeys</key>
@@ -394,6 +394,8 @@
 	<dict>
 		<key>FrequencyMHz</key>
 		<integer>2200</integer>
+		<key>HWPEnable</key>
+		<false/>
 		<key>UseARTFrequency</key>
 		<false/>
 	</dict>
@@ -600,19 +602,11 @@
 				</data>
 				<key>framebuffer-con2-type</key>
 				<data>
-				AAgAAA==
-				</data>
-				<key>framebuffer-fbmem</key>
-				<data>
-				AACQAA==
+				AAQAAA==
 				</data>
 				<key>framebuffer-patch-enable</key>
 				<data>
 				AQAAAA==
-				</data>
-				<key>framebuffer-stolenmem</key>
-				<data>
-				AAAwAQ==
 				</data>
 				<key>framebuffer-unifiedmem</key>
 				<data>
@@ -620,6 +614,8 @@
 				</data>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
+				<key>model</key>
+				<string>Intel UHD Graphics 630</string>
 			</dict>
 		</dict>
 		<key>SetIntelBacklight</key>
@@ -717,20 +713,6 @@
 		<false/>
 		<key>KernelToPatch</key>
 		<array>
-			<dict>
-				<key>Comment</key>
-				<string>MSR 0xE2 _xcpm_idle instant reboot(c) Pike R. Alpha</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				ILniAAAADzA=
-				</data>
-				<key>Replace</key>
-				<data>
-				ILniAAAAkJA=
-				</data>
-			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>Disable panic kext logging on 10.13 Debug kernel Find:       b0004c8b 55f0 Replace:    4883c440 5dc3 MatchOS:    10.13  Comment:    Disable panic kext logging on 10.13 Release kernel Find:       8a0284c0 7444 Replace:    8a0284c0 eb44 MatchOS:    10.13 </string>

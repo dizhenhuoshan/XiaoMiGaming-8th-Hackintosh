@@ -355,7 +355,7 @@
 				<key>PStates</key>
 				<false/>
 				<key>PluginType</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>NoDynamicExtract</key>
 			<false/>
@@ -366,7 +366,9 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>keepsyms=1 kext-dev-mode=1 debug=0x100 igfxcflbklt=1 -cdfon -v darkwake=0</string>
+		<string>keepsyms=1 debug=0x100 igfxcflbklt=1 -v darkwake=0</string>
+		<key>Debug</key>
+		<false/>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>DisableCloverHotkeys</key>
@@ -392,8 +394,6 @@
 	</dict>
 	<key>CPU</key>
 	<dict>
-		<key>FrequencyMHz</key>
-		<integer>2200</integer>
 		<key>HWPEnable</key>
 		<false/>
 		<key>UseARTFrequency</key>
@@ -404,7 +404,7 @@
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
-			<string>No</string>
+			<integer>99</integer>
 			<key>ResetHDA</key>
 			<true/>
 		</dict>
@@ -586,13 +586,13 @@
 			<dict>
 				<key>AAPL,ig-platform-id</key>
 				<data>
-				CQCbPg==
+				AACbPg==
 				</data>
 				<key>AAPL,slot-name</key>
 				<string>Internal</string>
 				<key>device-id</key>
 				<data>
-				mz4ACQ==
+				mz4AAA==
 				</data>
 				<key>device_type</key>
 				<string>VGA compatible controller</string>
@@ -602,20 +602,14 @@
 				</data>
 				<key>framebuffer-con2-type</key>
 				<data>
-				AAQAAA==
+				AAgAAA==
 				</data>
 				<key>framebuffer-patch-enable</key>
 				<data>
 				AQAAAA==
 				</data>
-				<key>framebuffer-unifiedmem</key>
-				<data>
-				AAAAgA==
-				</data>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
-				<key>model</key>
-				<string>Intel UHD Graphics 630</string>
 			</dict>
 		</dict>
 		<key>SetIntelBacklight</key>
@@ -688,6 +682,8 @@
 			<false/>
 		</dict>
 		<key>LoadVBios</key>
+		<false/>
+		<key>NvidiaNoEFI</key>
 		<false/>
 		<key>PatchVBios</key>
 		<false/>
@@ -802,7 +798,7 @@
 				<key>Comment</key>
 				<string>USB Port 15-&gt;26</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				g32IDw+DpwQ=
@@ -822,7 +818,7 @@
 				<key>Comment</key>
 				<string>USB Port Limit Patch 1 ©PMHeart</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				g/sPD4cLBAAA
@@ -842,7 +838,7 @@
 				<key>Comment</key>
 				<string>USB Port Limit Patch 3 ©PMHeart</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				g+MP0+NBCd8=
@@ -862,7 +858,7 @@
 				<key>Comment</key>
 				<string>USB Port Limit Patch 2 ©PMHeart</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				QYP/Dw+DlAQAAA==
@@ -882,7 +878,7 @@
 				<key>Comment</key>
 				<string>USB port limit patch #1 10.15.x modify by DalianSky(credit ydeng)</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				g/sPDw==
@@ -902,7 +898,7 @@
 				<key>Comment</key>
 				<string>USB Port limit patch #2 10.15.x modify by DalianSky</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				g/kPDw==
@@ -932,17 +928,17 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>BiosReleaseDate</key>
-		<string>09/17/2018</string>
+		<string>10/17/2019</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MBP152.88Z.F000.B00.1809171524</string>
+		<string>MBP151.88Z.F000.B00.1910172200</string>
 		<key>Board-ID</key>
-		<string>Mac-827FB448E656EC26</string>
+		<string>Mac-937A206F2EE63C01</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02852108GUJH4RUE</string>
+		<string>C02812802CDJP4FUE</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -954,7 +950,7 @@
 		<key>ChassisType</key>
 		<string>0x09</string>
 		<key>EfiVersion</key>
-		<string>220.250.320.0.0</string>
+		<string>1037.40.124.0.0</string>
 		<key>Family</key>
 		<string>MacBook Pro</string>
 		<key>FirmwareFeatures</key>
@@ -965,16 +961,54 @@
 		<string>Part Component</string>
 		<key>Manufacturer</key>
 		<string>Apple Inc.</string>
+		<key>Memory</key>
+		<dict>
+			<key>Modules</key>
+			<array>
+				<dict>
+					<key>Frequency</key>
+					<integer>2667</integer>
+					<key>Part</key>
+					<string>M471A1K43DB1-CTD</string>
+					<key>Serial</key>
+					<string>04000408020B0208</string>
+					<key>Size</key>
+					<integer>8192</integer>
+					<key>Slot</key>
+					<integer>0</integer>
+					<key>Type</key>
+					<string>DDR4</string>
+					<key>Vendor</key>
+					<string>Samsung</string>
+				</dict>
+				<dict>
+					<key>Frequency</key>
+					<integer>2667</integer>
+					<key>Part</key>
+					<string>8ATF1G64HZ-2G6D1</string>
+					<key>Serial</key>
+					<string>010E070B0F08070B</string>
+					<key>Size</key>
+					<integer>8192</integer>
+					<key>Slot</key>
+					<integer>1</integer>
+					<key>Type</key>
+					<string>DDR4</string>
+					<key>Vendor</key>
+					<string>Micron Technology</string>
+				</dict>
+			</array>
+		</dict>
 		<key>Mobile</key>
 		<true/>
 		<key>PlatformFeature</key>
-		<string>0x1A</string>
+		<string>0x02</string>
 		<key>ProductName</key>
-		<string>MacBookPro15,2</string>
+		<string>MacBookPro15,1</string>
 		<key>SerialNumber</key>
-		<string>C02XW9YYJHCD</string>
+		<string>C02WGKZHKGYG</string>
 		<key>SmUUID</key>
-		<string>E2978D05-209E-4051-94D7-8EE617954279</string>
+		<string>511D3E09-BE94-4252-9139-68E7853BD6FD</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
